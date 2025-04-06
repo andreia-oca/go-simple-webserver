@@ -18,6 +18,12 @@ func main() {
 		fmt.Fprintln(w, "Hello from Go HTTP server!")
 	})
 
+	// Route: /health
+	mux.HandleFunc("/health", func(w http.ResponseWriter, r *http.Request) {
+		w.WriteHeader(http.StatusOK)
+		fmt.Fprintln(w, "OK")
+	})
+
 	server := &http.Server{
 		Addr:    ":8080",
 		Handler: mux,
