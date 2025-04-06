@@ -45,6 +45,10 @@ jobs:
 
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      packages: write
+
     needs: compile
     if: success()
     steps:
