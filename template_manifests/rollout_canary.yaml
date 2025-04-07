@@ -1,11 +1,17 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
 metadata:
   name: go-simple-webserver
   labels:
     app: go-simple-webserver
 spec:
   replicas: 2
+  strategy:
+    canary:
+      steps:
+        - setWeight: 50
+        - pause: { duration: 30s }
+        - setWeight: 100
   selector:
     matchLabels:
       app: go-simple-webserver
@@ -19,3 +25,4 @@ spec:
           image: ghcr.io/andreia-oca/go-simple-webserver:latest
           ports:
             - containerPort: 8080
+          imagePullPolicy: Always
