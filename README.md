@@ -12,7 +12,7 @@ kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/st
 ### Install Argo CD Argo Rollouts
 
 ```bash
-kubectl create namespace argoproj
+kubectl create namespace argorollouts
 kubectl apply -f https://raw.githubusercontent.com/argoproj/argo-rollouts/stable/manifests/install.yaml
 ```
 
