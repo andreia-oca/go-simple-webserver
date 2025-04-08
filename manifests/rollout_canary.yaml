@@ -5,7 +5,7 @@ metadata:
   labels:
     app: go-simple-webserver
 spec:
-  replicas: 2
+  replicas: 20
   strategy:
     canary:
       steps:
