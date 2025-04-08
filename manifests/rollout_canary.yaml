@@ -9,8 +9,8 @@ spec:
   strategy:
     canary:
       steps:
-        - setWeight: 10
-        - pause: { duration: 60s }
+        - setWeight: 20
+        - pause: {}
         - setWeight: 20
         - pause: { duration: 60s }
         - setWeight: 50
@@ -26,7 +26,7 @@ spec:
     spec:
       containers:
         - name: webserver
-          image: ghcr.io/andreia-oca/go-simple-webserver:latest
+          image: ghcr.io/andreia-oca/go-simple-webserver@sha256:f40a68e0a8e86d19ca306266bb17a1500d73e158fe9e3ab7113679de8fc71da1
           ports:
             - containerPort: 8080
           imagePullPolicy: Always
