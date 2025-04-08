@@ -11,6 +11,10 @@ import (
 )
 
 func main() {
+	log.Println("Starting setup...")
+	time.Sleep(2 * time.Second) // Simulated setup time
+	log.Println("Setup complete. Starting server...")
+
 	mux := http.NewServeMux()
 
 	// Route: /
