@@ -5,10 +5,14 @@ metadata:
   labels:
     app: go-simple-webserver
 spec:
-  replicas: 2
+  replicas: 10 
   strategy:
     canary:
       steps:
+        - setWeight: 10
+        - pause: { duration: 30s }
+        - setWeight: 20
+        - pause: { duration: 30s }
         - setWeight: 50
         - pause: { duration: 30s }
         - setWeight: 100
