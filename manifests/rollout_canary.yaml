@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
         - name: webserver
-          image: ghcr.io/andreia-oca/go-simple-webserver@sha256:db9b124351be3aebf40faaffb5fa7ad4843c06752e11db7cae07447bb708b976
+          image: ghcr.io/andreia-oca/go-simple-webserver:latest
           ports:
             - containerPort: 8080
           imagePullPolicy: Always
